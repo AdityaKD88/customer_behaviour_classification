@@ -16,7 +16,15 @@ def index():
         pred=load_model.predict(inp)[0]
         #print(pred)
         if pred==0:
-            output='Customers with low income & spenditure'
+            output='Customers with low income & low spenditure'
+        elif pred==1:
+            output='Customers with high income & high spenditure'
+        elif pred==2:
+            output='Customers with medium income & medium spenditure'
+        elif pred==3:
+            output='Customers with high income & low spenditure'
+        elif pred==4:
+            output='Customers with low income & high spenditure'
         return render_template('index.html',output=output)
     return render_template('index.html')
 
